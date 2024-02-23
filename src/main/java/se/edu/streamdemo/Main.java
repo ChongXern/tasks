@@ -10,15 +10,17 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Task (stream) manager");
         DataManager dataManager = new DataManager("./data/data.txt");
+        // relative path instead of absolute path
+        // '.' refers to ~/Documents/GitHubs/tasks
         ArrayList<Task> tasksData = dataManager.loadData();
 
         System.out.println("Printing all data ...");
-        printAllData(tasksData);
+        printAllDataUsingStream(tasksData);
 
         System.out.println("Printing deadlines ...");
-        printDeadlines(tasksData);
+        printDeadlinesUsingStream(tasksData);
 
-        System.out.println("Total number of deadlines: " + countDeadlines(tasksData));
+        System.out.println("Total number of deadlines: " + countDeadlinesUsingStream(tasksData));
 
     }
 
